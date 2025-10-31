@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultant Allocation Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Consultant Allocation Dashboard</h1>
+    </header>
+
+    <div class="container">
+      <!-- Sidebar navigation -->
+      <aside class="sidebar" id="sidebar">
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="active">Overview</a></li>
+            <li><a href="consultants.html">Consultants</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main content area -->
+      <main class="main-content">
+        <!-- Controls to select year, view mode and period -->
+        <div class="controls">
+          <label for="yearSelect">Year:</label>
+          <select id="yearSelect"></select>
+
+          <label for="viewModeSelect">View:</label>
+          <select id="viewModeSelect">
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+          </select>
+
+          <label for="periodSelect">Period:</label>
+          <select id="periodSelect"></select>
+
+          <!-- Export to Excel button -->
+          <button id="exportBtn" class="save-button">Export to Excel</button>
+        </div>
+
+        <!-- Display period information such as date range -->
+        <div id="periodInfo" class="period-info"></div>
+
+        <!-- Summary table for allocations -->
+        <div class="summary" id="summaryTable"></div>
+
+        <!-- Weekly grid view for week‑by‑week allocations (auto‑populated in JS) -->
+        <div id="weeklyGridContainer" class="weekly-grid" style="display: none;"></div>
+      </main>
+    </div>
+
+    <!-- Template for project details (hidden) -->
+    <template id="detailsTemplate">
+      <div class="details">
+        <table class="details-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Allocation (%)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
