@@ -1,0 +1,313 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  color: #000000;
+}
+
+.app-header {
+  background-color: #4CA09A; /* teal from brand guide */
+  color: #ffffff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 220px;
+  background-color: #147E76; /* dark teal */
+  color: #ffffff;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Sidebar navigation */
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background-color: #4CA09A;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+.controls {
+  margin-bottom: 1rem;
+}
+
+.controls label {
+  margin-right: 0.5rem;
+}
+
+.controls select {
+  margin-right: 1rem;
+  padding: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Style date inputs similarly to selects */
+.controls input[type="date"] {
+  margin-right: 1rem;
+  padding: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Period information bar showing date range for selected period */
+.period-info {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #147E76;
+}
+
+/* Summary table styles */
+.summary {
+  border-top: 1px solid #ddd;
+}
+
+.consultant-row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  position: relative;
+}
+
+.consultant-row:hover {
+  background-color: #f0f6f6;
+}
+
+.consultant-name {
+  width: 200px;
+  font-weight: bold;
+}
+
+.allocation-bar {
+  flex: 1;
+  height: 22px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  margin-left: 1rem;
+}
+
+.allocation-segment {
+  height: 100%;
+}
+
+.allocation-empty {
+  background-color: #cccccc;
+}
+
+.consultant-row.expanded .details {
+  display: block;
+}
+
+.details {
+  display: none;
+  margin-left: 200px;
+  padding: 0.5rem 1rem;
+  border-left: 2px solid #147E76;
+  background-color: #f7fbfb;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.details-table th,
+.details-table td {
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+}
+
+.details-table th {
+  background-color: #4CA09A;
+  color: #ffffff;
+}
+
+.details-table tr:nth-child(even) {
+  background-color: #ecf6f5;
+}
+
+/* Weekly grid styles */
+.weekly-grid {
+  overflow-x: auto;
+  border-top: 1px solid #ddd;
+  margin-top: 1rem;
+}
+
+.weekly-grid-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.weekly-grid-table th,
+.weekly-grid-table td {
+  border: 1px solid #ddd;
+  padding: 0.25rem;
+  text-align: center;
+  min-width: 80px;
+  font-size: 0.85rem;
+}
+
+.weekly-grid-table th {
+  background-color: #f1f1f1;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.weekly-grid-table .consultant-name {
+  background-color: #f7fbfb;
+  font-weight: bold;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+/* Collapsed vs expanded cell styles */
+.cell-collapsed {
+  display: block;
+}
+.cell-expanded {
+  display: none;
+}
+/* When a row has the 'expanded' class, show expanded cells and hide collapsed ones */
+tr.expanded .cell-collapsed {
+  display: none;
+}
+tr.expanded .cell-expanded {
+  display: block;
+}
+
+.cell-bar {
+  display: flex;
+  width: 100%;
+  height: 16px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cell-segment {
+  height: 100%;
+}
+
+/* Editing page styles */
+.save-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #147E76;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.save-button:hover {
+  background-color: #0e5d52;
+}
+
+.save-message {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #147E76;
+}
+
+/* Table used in editing page */
+.edit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.edit-table th,
+.edit-table td {
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+}
+
+.edit-table th {
+  background-color: #4CA09A;
+  color: white;
+}
+
+.edit-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Projects page: consultant allocation list */
+.cons-allocation-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.consultant-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.consultant-entry input[type="number"] {
+  width: 60px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .consultant-name {
+    width: 150px;
+  }
+  .details {
+    margin-left: 0;
+    border-left: none;
+  }
+}
