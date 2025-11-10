@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultant Allocation Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Consultant Allocation Time Dashboard (SalesSparx)</h1>
+    </header>
+
+    <div class="container">
+      <!-- Sidebar navigation -->
+      <aside class="sidebar" id="sidebar">
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="active">Overview</a></li>
+            <li><a href="consultants.html">Consultants</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main content area -->
+      <main class="main-content">
+        <!-- Controls to select year, view mode and period -->
+        <div class="controls">
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" />
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" />
+          <label for="viewModeSelect">View:</label>
+          <select id="viewModeSelect">
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+          </select>
+          <button id="applyPeriodBtn" class="save-button">Apply Period</button>
+          <button id="exportBtn" class="save-button">Export to Excel</button>
+        </div>
+
+        <div id="periodInfo" class="period-info"></div>
+        <div id="gridContainer" class="weekly-grid"></div>
+      </main>
+    </div>
+
+    <!-- Template for project details (hidden) -->
+    <template id="detailsTemplate">
+      <div class="details">
+        <table class="details-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Allocation (%)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </template>
+
+    <!-- Supabase client (sets window.sb) -->
+    <script type="module" src="js/supabaseClient.js"></script>
+    <!-- DB API helpers (sets window.api) -->
+    <script type="module" src="js/api.js"></script>
+    <!-- Your app logic; you can keep this non-module if you reference window.api -->
+    <script src="script.js"></script>
+  </body>
+</html>
