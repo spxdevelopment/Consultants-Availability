@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Consultant Allocations</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 id="editTitle">Edit Allocations</h1>
+    </header>
+    <div class="container">
+      <aside class="sidebar" id="sidebar">
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="consultants.html" class="active">Consultants</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <!-- Controls for selecting view and year -->
+        <div class="controls">
+          <button id="backButton">← Back to Consultants</button>
+          <label for="editYearSelect">Year:</label>
+          <select id="editYearSelect"></select>
+          <label for="editViewModeSelect">View:</label>
+          <select id="editViewModeSelect">
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+          </select>
+        </div>
+
+        <!-- Editing table -->
+        <div id="editTableContainer"></div>
+        <button id="saveButton" class="save-button">Save Changes</button>
+        <p id="saveMessage" class="save-message" style="display: none;"></p>
+      </main>
+    </div>
+    <script src="edit.js"></script>
+  </body>
+</html>
